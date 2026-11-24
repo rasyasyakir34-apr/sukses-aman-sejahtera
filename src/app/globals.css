@@ -9,7 +9,7 @@
   --color-signal: #1c5bff;
   --color-signal-deep: #0b3fce;
   --color-mist: #7383a0;
-  --color-smoke: #53627a;
+  --color-smoke: #3d4f68;
   --color-sky: #edf4ff;
   --color-cloud: #f6f9ff;
   --color-sun: #ffd43b;
@@ -134,11 +134,11 @@
   }
 
   .body-lg {
-    @apply text-[15px] leading-[1.75] sm:text-[17px] sm:leading-[1.8];
+    @apply text-[16px] leading-[1.75] sm:text-[18px] sm:leading-[1.8];
   }
 
   .body-base {
-    @apply text-[14px] leading-[1.7] sm:text-[15px];
+    @apply text-[15px] leading-[1.7] sm:text-[16px];
   }
 
   .btn {
