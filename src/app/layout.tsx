@@ -20,8 +20,13 @@ const manrope = Manrope({
   display: "swap",
 });
 
+// Gunakan URL Vercel otomatis saat deploy, fallback ke site.url (domain custom)
+const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : site.url;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(baseUrl),
   title: {
     default: "CV. Sukses Aman Sejahtera — General Supplier Palembang",
     template: "%s — CV. Sukses Aman Sejahtera",
@@ -46,17 +51,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: site.url,
+    url: baseUrl,
     siteName: site.name,
     title: "CV. Sukses Aman Sejahtera — General Supplier Palembang",
     description:
       "Material tepat, proyek jalan. Pengadaan material dan perlengkapan proyek konstruksi di Palembang sejak 2013.",
     images: [
       {
-        url: "/images/5.jpg",
-        width: 750,
-        height: 550,
-        alt: "Proyek Jembatan Musi IV Palembang",
+        url: `${baseUrl}/images/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "CV. Sukses Aman Sejahtera — General Supplier Palembang",
       },
     ],
   },
@@ -65,7 +70,7 @@ export const metadata: Metadata = {
     title: "CV. Sukses Aman Sejahtera — General Supplier Palembang",
     description:
       "Pengadaan material dan perlengkapan proyek konstruksi di Palembang sejak 2013.",
-    images: ["/images/5.jpg"],
+    images: [`${baseUrl}/images/og-image.jpg`],
   },
 };
 
